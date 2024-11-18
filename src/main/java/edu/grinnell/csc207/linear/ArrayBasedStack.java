@@ -72,7 +72,7 @@ public class ArrayBasedStack<T> implements Stack<T> {
     if (this.isEmpty()) {
       throw new Exception("empty");
     } // if empty
-    return values[--size];
+    return this.values[--this.size];
   } // get()
 
   @Override

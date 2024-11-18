@@ -46,7 +46,7 @@ public class ArrayBasedQueue<T> implements Queue<T> {
     this.values = (T[]) new Object[capacity];
     this.front = 0;
     this.size = 0;
-  } // ArayBasedQueue(int capacity)
+  } // ArrayBasedQueue(int)
 
   // +---------------+---------------------------------------------------
   // | Queue Methods |

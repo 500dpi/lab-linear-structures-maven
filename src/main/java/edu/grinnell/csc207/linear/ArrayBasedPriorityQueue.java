@@ -49,7 +49,7 @@ public class ArrayBasedPriorityQueue<T> implements PriorityQueue<T> {
     this.values = (T[]) new Object[capacity];
     this.order = order;
     this.size = 0;
-  } // ArayBasedQueue(int capacity)
+  } // ArrayBasedPriorityQueue(int)
 
   // +------------------------+------------------------------------------
   // | Priority Queue Methods |
