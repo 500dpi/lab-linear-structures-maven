@@ -6,7 +6,7 @@ import edu.grinnell.csc207.linear.ArrayBasedStack;
  * A really simple experiment with ArrayBasedStacks.
  *
  * @author Samuel A. Rebelsky
- * @author Your Name Here
+ * @author Sara Jaljaa
  */
 public class ArrayBasedStackExperiment {
   /**

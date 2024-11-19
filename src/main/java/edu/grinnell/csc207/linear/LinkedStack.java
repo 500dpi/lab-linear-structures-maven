@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
  * A simple stack based on linked nodes.
  *
  * @author Samuel A. Rebelsky
- * @author Your Name Here
+ * @author Sara Jaljaa
  */
 public class LinkedStack<T> implements Stack<T> {
   // +--------+----------------------------------------------------------
