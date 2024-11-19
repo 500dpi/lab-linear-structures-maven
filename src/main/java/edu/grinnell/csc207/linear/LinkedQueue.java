@@ -7,9 +7,10 @@ import java.util.NoSuchElementException;
  * A simple queue built with linked nodes.
  *
  * @author Samuel A. Rebelsky
- * @author Your Name Here
+ * @author Sara Jaljaa
  */
 public class LinkedQueue<T> implements Queue<T> {
+
   // +--------+----------------------------------------------------------
   // | Fields |
   // +--------+
@@ -52,20 +53,32 @@ public class LinkedQueue<T> implements Queue<T> {
 
   @Override
   public T peek() throws Exception {
+    if (this.isEmpty()) {
+      throw new Exception();
+    } // if
     return this.front.value;
   } // peek()
 
   @Override
   public void put(T val) throws Exception {
-    throw new Exception("Unimplemented");
+    Node<T> node = new Node<T>(val, null);
+    if (this.isEmpty()) {
+      this.front = node;
+      this.back = node;
+    } else {
+      this.back.next = node;
+      this.back = node;
+    } // elif
   } // put(T)
 
   @Override
   public T get() throws Exception {
     if (this.isEmpty()) {
-      throw new Exception("cannot get values from the empty queue");
+      throw new Exception("Cannot get values from the empty queue");
     } // if empty
-    throw new Exception("Unimplemented");
+    T val = this.front.value;
+    this.front = this.front.next;
+    return val;
   } // get()
 
   @Override
