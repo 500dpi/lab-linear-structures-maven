@@ -25,14 +25,12 @@ public class StringUtils {
     char matching;
     int count = 0;
 
-    /* Return if there is one or no elements; there
-    cannot be a matching pair in these conditions */
+    /* A matching pair can only be present in strings length 2+ */
     if (str.length() <= 1) {
       return false;
     } // if
 
     for (int i = 0; i < chars.length; i++) {
-
       /* Check if there is a starting bracket type ( or [ */
       if (startBrack(chars[i])) {
         parens.push(chars[i]);
@@ -48,14 +46,14 @@ public class StringUtils {
             is a pair; increase the count to indicate there are brackets present */
             case ')':
               matching = parens.get();
-              if (pairs(matching, '(')) {
+              if (notPairs(matching, '(')) {
                 return false;
               } // if
               count++;
               break;
             case ']':
               matching = parens.get();
-              if (pairs(matching, '[')) {
+              if (notPairs(matching, '[')) {
                 return false;
               } // if
               count++;
@@ -66,6 +64,7 @@ public class StringUtils {
         } // elif
       } // if
     } // for
+
     /* If the stack is not empty, all pairs were not matched. If the count
     is greater than zero, then there were braces in the stack (as opposed to
     just non-brace characters) */
@@ -76,9 +75,9 @@ public class StringUtils {
     } // elif
   } // checkMatching
 
-  private static boolean pairs(char matching, char target) {
+  private static boolean notPairs(char matching, char target) {
     return (matching != target);
-  } // pairs(char, char)
+  } // notPairs(char, char)
 
   private static boolean startBrack(char brack) {
     return (brack == '(' || brack == '[');
